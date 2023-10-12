@@ -16,6 +16,20 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  
+<distributionManagement>
+	<repository>
+  <id>praneshkumar7777</id>
+  <url>https://pkgs.dev.azure.com/praneshkumar7777/_packaging/praneshkumar7777/maven/v1</url>
+  <releases>
+    <enabled>true</enabled>
+  </releases>
+  <snapshots>
+    <enabled>true</enabled>
+  </snapshots>
+</repository>
+</distributionManagement>
+	
 
   <build>
     <finalName>helloworld</finalName>
