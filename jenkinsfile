@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    tools {
+        // Install the Maven version configured as "M3" and add it to the path.
+        maven "Maven-3.9.4"
+    }
+
+    stages {
+        stage('Checkout stage') {
+            steps {
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'GitHub_Cred', url: 'https://github.com/Pranesh-poojary/pipelines-java.git']])
+                
+            }
+        }
+        stage('maven build') {
+            steps {
+                bat "mvn clean package"
+            }
+        }
+     
+    }
+}
